@@ -63,7 +63,8 @@ namespace PostgreSQLExample
 		{
 			var uriString = ConfigurationManager.AppSettings["JUSTONEDB_DBI_URL"]
 				?? ConfigurationManager.AppSettings["CHRONICDB_URL"]
-				?? ConfigurationManager.AppSettings["ELEPHANTSQL_URL"];
+				?? ConfigurationManager.AppSettings["ELEPHANTSQL_URL"]
+				?? Environment.GetEnvironmentVariable("DATABASE_URL");
 			var uri = new Uri(uriString);
 			var connectionString = string.Format("Server={0};Port={1};Database={2};User Id={3};Password={4};",
 				uri.Host, uri.Port, uri.AbsolutePath.Trim('/'), uri.UserInfo.Split(':').First(),
