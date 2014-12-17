@@ -1,0 +1,10 @@
+{
+    "name": ".NET Postgres Sample",
+    "description": "",
+    "env": {
+        "BUILDPACK_URL": "https://github.com/friism/heroku-buildpack-mono"
+    },
+    "addons": [
+	"heroku-postgres"
+    ]
+}
